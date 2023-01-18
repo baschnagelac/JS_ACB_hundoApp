@@ -1,0 +1,100 @@
+:root {
+    --acb-primary-color: #D0F0C0;
+    --acb-secondary-color: #567635;
+    --acb-highlight-color: #CD7F32;
+
+
+    --acb-nav-toggler-color: var(--acb-highlight-color);
+    --acb-nav-toggler-glow: rgba(242, 199, 92, 0.55);
+
+    --acb-dark-color: #232b2b;
+    --acb-light-color: #FAF9F6;
+    --acb-background-color: #D9D9CC;
+
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/*---stretch the box vertically as much as possible---*/
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+
+/* Start: nav bar overrides */
+
+#mainNav {
+    background-color: var(--acb-primary-color);
+    color: var(--acb-dark-color);
+    font-size: 2rem;
+    margin: 20px;
+
+}
+
+#mainNav button {
+    border-color: var(--acb-secondary-color);
+}
+
+.navbar-toggle {
+    color: var(--acb-nav-toggler-glow);
+}
+
+.navbar-toggler-icon-acb {
+    color: var(--acb-nav-toggler-color);
+    font-size: 1.5rem;
+}
+
+
+/* End: nav bar overrides */
+
+
+
+/* start footer styles */
+
+footer {
+    background-color: var(--acb-primary-color);
+    color: var(--acb-dark-color);
+}
+
+.socialicons {
+    font-size: 2rem;
+    padding-left: .5rem;
+    color: var(--acb-dark-color);
+}
+
+.socialicons:hover {
+    color: var(--acb-secondary-color);
+}
+
+/* end footer styles  */
+
+
+.appLogo {
+    max-width: 400px;
+}
+
+.checkList {
+    list-style-type: none;
+}
+
+.checkList>li i {
+    color: var(--acb-secondary-color);
+    padding-right: .5rem;
+}
+
+.devIcons {
+    font-size: 4rem;
+    padding-left: .5rem;
+}
