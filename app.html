@@ -54,7 +54,7 @@
                         </li>
                         <!-- ADD THIS IN BEFORE PUBLISHING -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">The Repo</a>
+                            <a class="nav-link" href="https://github.com/baschnagelac/JS_ACB_hundoApp" target="_blank">The Repo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -68,10 +68,46 @@
         </nav>
     </header>
 
-    <main class="content container">
-        <h1>APP UI GOES HERE</h1>
-        <input id="message" placeholder="Enter a Message..." type="text">
-        <button class="btn btn-primary" type="button" id="btnSubmit">Display a Message</button>
+    <main class="content container px-4 py-5">
+        <div class="row h-100 row-cols-1 row-cols-md-2 gy-2">
+            <div class="col border-2 border-end">
+                <h1 class="fw-bold mb-3">Hundo: coding challenge</h1>
+                <h4 class="lead">
+                    Live life one loop at a time! A JavaScript coding exercise using loops. Write a program
+                    that displays the numbers from 0-100, then display the even numbers in <strong>BOLD.</strong>.
+                </h4>
+                <h2 class="mt-5 border-2 border-bottom">Instructions</h2>
+                <p>
+                    Enter a starting value and ending value. Pres the button and the values will appear.
+                </p>
+            </div>
+            <div class="col">
+                <form action="#" class="row gy-2 gx-3">
+                    <div class="col">
+                        <input id="startValue" type="number" class="form-control" placeholder="Starting Value"
+                            aria-label="Starting Value" value="0" />
+                    </div>
+                    <div class="col">
+                        <input id="endValue" type="number" class="form-control" placeholder="Ending Value"
+                            aria-label="Ending Value" value="100" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button class="btn btn-dark btn-lg" id="btnSubmit" type="button">Display The Hundo</button>
+                    </div>
+                </form>
+                <h2 class="mt-5 border-bottom border-2">Results</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tbody id="results">
+                            <!-- 
+                                Hundo Goes Here
+                               
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="container-fluid py-1">
@@ -106,7 +142,7 @@
 
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById('btnSubmit').addEventListener("click", displayMessage);
+        document.getElementById('btnSubmit').addEventListener("click", getValues);
     </script>
 </body>
 

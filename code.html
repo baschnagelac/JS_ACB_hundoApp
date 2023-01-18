@@ -57,7 +57,7 @@
                         </li>
                         <!-- ADD THIS IN BEFORE PUBLISHING -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">The Repo</a>
+                            <a class="nav-link" href="https://github.com/baschnagelac/JS_ACB_hundoApp.git" target="_blank">The Repo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -77,26 +77,100 @@
             <!-- source code -->
             <div class="col-12 col-lg-8">
                 <pre class="line-numbers">
-                    <code class="language-js">
-                        function displayMessage() {
-                            let msg = document.getElementById('message').value;
-                        
-                        Swal.fire(
-                             {
-                                backdrop: false,
-                                title: 'App Name',
-                                text: msg
-                            }
-                    )
-                }
-                    </code>
-                </pre>
+                        <code class="language-js">
+    // get the user input from the page
+    //controller function -entry point
+    function getValues() {
+    
+    //get the values from the page
+    let startValue = document.getElementById('startValue').value;
+    let endValue = document.getElementById('endValue').value;
+    
+    //parse our inputs as numbers
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+    
+    //verify our inputs ARE numbers
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        //if they are, generate our numbers
+        let numbersArray = generateNumbers(startValue, endValue);
+    
+        //then display them on the page
+        displayNumbers(numbersArray);
+    } else {
+        //if they are not, tell our user!
+        Swal.fire(
+            {
+                icon: 'error',
+                title: 'Oops!',
+                text: 'Only integers are allowed for Hundo!'
+            }
+        );
+    }
+    
+    }
+    
+    //generate our numbers
+    //logic function
+    function generateNumbers(start, end) {
+    
+        let numbers = [];
+    
+        for(let value = start; value <= end; value++) { 
+            numbers.push(value); 
+        }
+         return numbers;
+    } 
+         
+    //display them on the page
+    //view function 
+    function displayNumbers(numbersArray) { 
+        let tableBody=document.getElementById('results');
+         
+        let tableHtml="" ; 
+    
+         for(let index=0; index < numbersArray.length; index++) {
+             let value=numbersArray[index];
+              let className='' ; 
+              
+              if(value % 2==0) {
+                 className='even' ;
+                 } else { 
+                    className='odd' ;
+                 } 
+                 
+                 if (index % 5==0) { 
+                    tableHtml +='<tr>' ;
+                 } 
+                 
+                 let tableRow=`<td class="${className}">${value}</td>`
+    
+        tableHtml = tableHtml + tableRow;
+        //tableHtml += tableRow;
+    
+        if ((index + 1) % 5 == 0) {
+             tableHtml += '</tr>';
+        }
+        }
+    
+        tableBody.innerHTML = tableHtml;
+        }
+                        </code>
+                    </pre>
             </div>
             <!-- code description -->
             <div class="col-12 col-lg-4">
-                <p>The code is structured in one function</p>
-                <h5><code>displayMessage()</code></h5>
-                <p>The function displays the message in a Sweet Alert</p>
+                <h5>The code is structured in three functions</h5>
+                <p>The first function <code>function getValues()</code> gets the user's input from the page and acts as
+                    a controller function or entry point. It then gets the starting and ending values from the page.
+                    Next, it parses the inputs as numbers and verifies that they ARE numbers. If they ARE numbers, the
+                    numbers are generated and displayed on the page. If they are not, we tell the user with an Sweet
+                    Alert.</p>
+                <p>The second function <code>function generateNumbers(start, end)</code>generates our numbers and
+                    contains the logic parts of the function by running a for loop. </p>
+                <p>The third function <code>function displayNumbers(numberArray)</code> acts as the view function and
+                    displays the numbers on the page. Within this function, we use a for loop and if statements to
+                    control the display of the results.</p>
 
             </div>
         </div>
