@@ -27,7 +27,6 @@ function getValues() {
             }
         );
     }
-
 }
 
 //generate our numbers 
@@ -39,7 +38,6 @@ function generateNumbers(start, end) {
     for (let value = start; value <= end; value++) {
         numbers.push(value);
     }
-
     return numbers;
 }
 
@@ -59,7 +57,6 @@ function displayNumbers(numbersArray) {
         } else {
             className = 'odd';
         }
-
         if (index % 5 == 0) {
             tableHtml += '<tr>';
         }
@@ -73,7 +70,6 @@ function displayNumbers(numbersArray) {
             tableHtml += '</tr>';
         }
     }
-
     tableBody.innerHTML = tableHtml;
 }
 
